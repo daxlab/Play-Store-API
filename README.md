@@ -22,4 +22,5 @@ Make a GET request
   "rating3": "2206352",
   "rating2": "981262",
   "rating1": "1859414"
-}```
+}
+```
