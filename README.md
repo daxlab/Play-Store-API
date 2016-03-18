@@ -24,3 +24,5 @@ Make a GET request
   "rating1": "1859414"
 }
 ```
+
+The app is live at [https://google-play-store-api.herokuapp.com/api?package=com.whatsapp](https://google-play-store-api.herokuapp.com/api?package=com.whatsapp)
