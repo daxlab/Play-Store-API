@@ -1,34 +1,40 @@
 # Play-Store-API
-Unofficial play store api written in nodejs
+Unofficial google play store api written in nodejs
 
 # Usage
 Make a GET request
 
- `localhost:3000?package=com.whatsapp`
+ `localhost:8000/api?package=com.djit.apps.edjing.expert`
 
  Response will look like
 
  ```json
- {
-  "name": "WhatsApp Messenger",
-  "category": "Communication",
-  "packageName": "com.whatsapp",
-  "downloads": "1000000000 - 5000000000",
-  "description": "WhatsApp Messenger is a FREE messaging app available for Android and other smartphones. WhatsApp uses your phone's Internet connection (4G/3G/2G/EDGE or Wi-Fi, as available) to let you message and call friends and family. Switch from SMS to WhatsApp to send and receive messages, calls, photos, videos, documents, and Voice Messages. WHY USE WHATSAPP: • NO FEES: WhatsApp uses your phone's Internet connection (4G/3G/2G/EDGE or Wi-Fi, as available) to let you message and call friends and family, so you don't have to pay for every message or call.* There are no subscription fees to use WhatsApp.• MULTIMEDIA: Send and receive photos, videos, documents, and Voice Messages.• FREE CALLS: Call your friends and family for free with WhatsApp Calling, even if they're in another country.* WhatsApp calls use your phone's Internet connection rather than your cellular plan's voice minutes. (Note: Data charges may apply. Contact your provider for details. Also, you can't access 911 and other emergency service numbers through WhatsApp). • GROUP CHAT: Enjoy group chats with your contacts so you can easily stay in touch with your friends or family.• WHATSAPP WEB: You can also send and receive WhatsApp messages right from your computer's browser.• NO INTERNATIONAL CHARGES: There's no extra charge to send WhatsApp messages internationally. Chat with your friends around the world and avoid international SMS charges.* • SAY NO TO USERNAMES AND PINS: Why bother having to remember yet another username or PIN? WhatsApp works with your phone number, just like SMS, and integrates seamlessly with your phone's existing address book. • ALWAYS LOGGED IN: With WhatsApp, you're always logged in so you don't miss messages. No more confusion about whether you're logged in or logged out. • QUICKLY CONNECT WITH YOUR CONTACTS: Your address book is used to quickly and easily connect you with your contacts who have WhatsApp so there's no need to add hard-to-remember usernames.• OFFLINE MESSAGES: Even if you miss your notifications or turn off your phone, WhatsApp will save your recent messages until the next time you use the app.• AND MUCH MORE: Share your location, exchange contacts, set custom wallpapers and notification sounds, email chat history, broadcast messages to multiple contacts at once, and more!*Data charges may apply. Contact your provider for details. --------------------------------------------------------- We're always excited to hear from you! If you have any feedback, questions, or concerns, please email us at: android-support@whatsapp.com or follow us on twitter: http://twitter.com/WhatsApp@WhatsApp---------------------------------------------------------",
+{
+  "name": "edjing PRO - Music DJ mixer",
+  "category": "Music & Audio",
+  "packageName": "com.djit.apps.edjing.expert",
+  "downloads": "50000 - 100000",
+  "description": "The world first DJ app finally releases its professional version: edjing Pro, a full featured DJ mixer! At last, a professional DJ controller optimized for Android smartphones and tablets!All effects are unlocked - no ad - no hidden cost! edjing Pro is equipped with the brand new Sound System of edjing, the result of five years of R&D, to provide deejays with the most reliable and reactive mixer to remix their tracks.This new Sound System enables accurate music frequency analysis, even more concise beatmatching and new sound effects directly coming from professional deejay controllers.Designed by and for professional deejays, the look and feel, as well as the ergonomic of this new remix solution were especially thought of to make this mixing interface the most intuitive possible. To improve your mixing experience, access more than 50 million tracks thanks to a direct access to streaming sources like Deezer and SoundCloud! A SOBER AND ERGONOMIC MIXING INTERFACE THOUGHT OF BY AND FOR PRO DEEJAYS- Direct access to all Mix features on the same screen- Large audio spectrum for optimum beat localizations, making it easier to adjust your songs settings and bpm matching- Songs bpm are directly visible on the interface dedicated to the mix- Direct access to your music library in a single click, with all your songs, titles, albums and playlists- Colored identification of sound effects in use within the audio spectrum to find your way around in a single look- An interchangeable mixer interface with vinyl turntables for turntablists soulsA SMART AND ALMOST UNLIMITED MUSIC LIBRARY- Access more than 50 million tracks thanks to the integration of Deezer and Soundcloud streaming music sources- In addition to streaming sources, access to your local music files, like your own mp3- A global search to browse all your music sources at once (streaming like Deezer or SoundCloud as well as your local mp3)- Search results by track, album, artist, playlists- Prepare your sets in advance thanks to the Queue: you can add songs from any source (local mp3, SoundCloud or Deezer)- Add, edit and/or delete tracks from the Queue in a simple gestureTHE MOST POWERFUL SOUND PROCESSING SYSTEM ON ANDROID SMARTPHONES AND TABLETS- Low audio latency for accuracy and comfort during the mix- Perfect beatmatching: sound effects are now perfectly synchronized with the beats for perfect sets- New automatic track synchronization with continuous beatmatching resetting between songsTHE SAME LEVEL OF FEATURES AS PROFESSIONAL DJ CONTROLLER:- 2 broadcast channels to mix 2 tracks at once- Bpm detection and direct visualization- Ultra-concise scratch- Pre-Cueing- 4 editable Hot Cue- Loop- Tempo- 3-band Equalizer and filters available on each channel- Automix mode- Color effects to give more depth to your mix such as Super Filtrer, the Reverb, the Delay or the Echo Out- Rhythmic effects synchronized on the beats like Beatgrid- Roll, Roll Filter and Reverse- A new ‘Freeze’ function to freeze one of the spectrum and play or replay the best instants- Custom beats thanks to the “Tap BPM” mode: adjust the beats manually as you like using natural sweep and pinch gestures.- Sync feature for an automatic synchronization of your tracks- Record your remix in .wav format to get HQ live recording of your mixing performanceNo more need for expensive DJ turntables, you can now remix all your favorite songs and playlists from your Android device. The real-time sound processing, the ultra fast audio calculation and the precision of the audio analysis enable you to achieve the best mixtapes.1GB RAM minimum recommendedWeb: http://edjing.com/proContact: support.pro@edjing.comFacebook: https://www.facebook.com/pages/edjing-Pro/1574512199467994",
   "overallRating": "4.4",
-  "overallRatingCount": "35638224",
-  "rating5": "25192925",
-  "rating4": "5397439",
-  "rating3": "2206352",
-  "rating2": "981262",
-  "rating1": "1859414"
+  "overallRatingCount": "3960",
+  "rating5": "2753",
+  "rating4": "671",
+  "rating3": "224",
+  "rating2": "114",
+  "rating1": "198",
+  "price": "Rs. 376.08",
+  "icon": "//lh3.googleusercontent.com/qORJxwkWh3Byw4HnRM-fHaRq3XF_s4OlWwUOhPd5AF_g98gtPOfdXi3H2b3xfSKp8Q=w300",
+  "author": "DJiT - Best free music and audio apps for Android",
+  "authorUrl": "https://www.google.com/url?q=http://www.edjing.com&sa=D&usg=AFQjCNE-JBnuZkmB652jN5n_Z5W7aLZa9g",
+  "appSize": "27M",
+  "supportedDevices": "4.0 and up",
+  "version": "1.2.6"
 }
 ```
 
-The app is live at [https://google-play-store-api.herokuapp.com/api?package=com.whatsapp](https://google-play-store-api.herokuapp.com/api?package=com.whatsapp)
+The app is live at [https://google-play-store-api.herokuapp.com/api?package=com.djit.apps.edjing.expert](https://google-play-store-api.herokuapp.com/api?package=com.djit.apps.edjing.expert)
 
 
-# For Arjun
+# Run server
 
-To run in single thread ```npm start```
-for cluster mode ```npm run-script cluster```
+```npm start``` for single instance or ```npm run-script cluster``` for cluster of instances.
