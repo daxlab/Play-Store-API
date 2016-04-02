@@ -28,7 +28,38 @@ Make a GET request
   "authorUrl": "https://www.google.com/url?q=http://www.edjing.com&sa=D&usg=AFQjCNE-JBnuZkmB652jN5n_Z5W7aLZa9g",
   "appSize": "27M",
   "supportedDevices": "4.0 and up",
-  "version": "1.2.6"
+  "version": "1.2.6",
+  "similarApps": [
+    "com.djit.apps.edjing.expert",
+    "com.mixvibes.crossdjapp",
+    "com.algoriddim.djay",
+    "com.djit.apps.edjing.expert.le",
+    "com.edjing.edjingdjturntable",
+    "com.beatronik.djstudiodemo",
+    "com.algoriddim.djay_free",
+    "com.mixvibes.crossdjfree",
+    "com.medialook.djmusicmixer",
+    "com.candysmilestudio.bestdjmixsoftware",
+    "com.ladesinc.djpad",
+    "com.adj",
+    "com.mobiray.djlaunchpad",
+    "com.bti.djControl",
+    "com.code4fun.app.djmix",
+    "es.eduxdream.dj",
+    "com.Gameifunia.dj_mixer",
+    "com.edjing.edjingdjturntable",
+    "com.djit.equalizerplusforandroidfree",
+    "com.djit.apps.edjing.expert.le",
+    "com.djit.bassboostforandroidfree",
+    "com.djit.apps.eq.free",
+    "com.djit.apps.yousing",
+    "com.djit.bassboostforandroidpro",
+    "com.edjing.edjingdjturntable.marshall",
+    "com.djit.apps.edjing.scratch",
+    "com.djit.apps.equalizerplus.pro.marshall",
+    "com.djit.apps.eq.pro",
+    "com.djit.equalizerplusforandroidpro"
+  ]
 }
 ```
 
