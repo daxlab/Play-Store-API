@@ -72,7 +72,8 @@ Make a GET request
      "Wow. Didn't expect the beat detection to be this bad.",
      "Great App! Great for mixing tunes! Edm all day everyday! :D"
    ]
- }```
+ }
+ ```
 
 The app is live at [https://google-play-store-api.herokuapp.com/api?package=com.djit.apps.edjing.expert](https://google-play-store-api.herokuapp.com/api?package=com.djit.apps.edjing.expert)
 
