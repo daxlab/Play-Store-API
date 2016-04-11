@@ -18,13 +18,12 @@ app.get('/', function(req, res) {
 
 app.get('/api', function(req, res) {
     var scrapeUrl = 'https://play.google.com/store/apps/details?id=';
-    debug('Incoming request ',req.body);
+    debug('Incoming request ', req.body);
     scrapeUrl = scrapeUrl + req.query.package;
     request(scrapeUrl, function(err, response, html) {
-        if(err) {
+        if (err) {
             debug('Error in request ', scrapeUrl);
-        }
-        else {
+        } else {
             var page = cheerio.load(html);
             var appData = {
                 name: '',
@@ -38,63 +37,91 @@ app.get('/api', function(req, res) {
                 rating4: '',
                 rating3: '',
                 rating2: '',
-                rating1: ''
+                rating1: '',
+                price: '',
+                icon: '',
+                author: '',
+                authorUrl: '',
+                appSize: '',
+                supportedDevices: '',
+                version: '',
+                similarApps: [],
+                lastUpdated: '',
+                whatsNew: '',
+                contentRating: '',
+                reviews: []
             };
+            var wrapper = page('.details-wrapper ');
+            appData.name = wrapper.find(".document-title[itemprop=name]").text().trim();
+            appData.description = wrapper.find("[itemprop=description]").text().trim();
+            appData.icon = wrapper.find(".cover-image").attr("src");
+            appData.author = wrapper.find("[itemprop=author] [itemprop=name]").text().trim();
+            appData.authorUrl = wrapper.find(".meta-info .dev-link").attr("href");
+            appData.appSize = wrapper.find("[itemprop=fileSize]").text().trim();
+            appData.supportedDevices = wrapper.find("[itemprop=operatingSystems]").text().trim();
+            appData.version = wrapper.find("[itemprop=softwareVersion]").text().trim();
+            appData.category = wrapper.find("[itemprop=genre]").text().trim();
+            appData.downloads = wrapper.find("[itemprop=numDownloads]").text().replace(/,/g, '').trim();
+            appData.lastUpdated = wrapper.find("[itemprop=datePublished]").text().trim();
+            appData.contentRating = wrapper.find("[itemprop=contentRating]").text().trim();
+            appData.price = wrapper.find(".details-actions button.price").text().trim();
 
-            page('.document-title').filter(function() {
-                var data = page(this);
-                appData.name = data.children().first().text();
-            });
-            page('.document-subtitle.category').filter(function() {
-               var data = page(this);
-               appData.category = data.children().first().text();
-            });
+            /* Clean app price here only */
+            var price = appData.price;
+            if (price.indexOf('Install') > -1) {
+                price = '0.0';
+            } else {
+                price = price.replace(' Buy', '');
+            }
+            appData.price = price;
+
             page('.score').filter(function() {
-               var data = page(this);
+                var data = page(this);
                 appData.overallRating = data.text();
             });
             page('.reviews-stats').filter(function() {
                 var data = page(this);
                 appData.overallRatingCount = data.children().last().text();
-                appData.overallRatingCount = appData.overallRatingCount.replace(/,/g,'');
+                appData.overallRatingCount = appData.overallRatingCount.replace(/,/g, '');
             });
             page('.rating-bar-container.five').filter(function() {
                 var data = page(this);
                 appData.rating5 = data.children().last().text();
-                appData.rating5 = appData.rating5.replace(/,/g,'');
+                appData.rating5 = appData.rating5.replace(/,/g, '');
             });
             page('.rating-bar-container.four').filter(function() {
                 var data = page(this);
                 appData.rating4 = data.children().last().text();
-                appData.rating4 = appData.rating4.replace(/,/g,'');
+                appData.rating4 = appData.rating4.replace(/,/g, '');
             });
             page('.rating-bar-container.three').filter(function() {
                 var data = page(this);
                 appData.rating3 = data.children().last().text();
-                appData.rating3 = appData.rating3.replace(/,/g,'');
+                appData.rating3 = appData.rating3.replace(/,/g, '');
             });
             page('.rating-bar-container.two').filter(function() {
                 var data = page(this);
                 appData.rating2 = data.children().last().text();
-                appData.rating2 = appData.rating2.replace(/,/g,'');
+                appData.rating2 = appData.rating2.replace(/,/g, '');
             });
             page('.rating-bar-container.one').filter(function() {
                 var data = page(this);
                 appData.rating1 = data.children().last().text();
-                appData.rating1 = appData.rating1.replace(/,/g,'');
+                appData.rating1 = appData.rating1.replace(/,/g, '');
             });
             page('.details-wrapper.apps').filter(function() {
                 var data = page(this);
                 appData.packageName = data.data('docid');
             });
-            page('.show-more-content.text-body').filter(function() {
-                var data = page(this);
-                appData.description = data.children().text();
+            page('span.preview-overlay-container').each(function(index, key) {
+                appData.similarApps.push(page(this).attr('data-docid'));
             });
-            page('.details-section.metadata').filter(function() {
+            page('.recent-change').filter(function() {
                 var data = page(this);
-                appData.downloads = data.find("[itemprop=numDownloads]").text();
-                appData.downloads = appData.downloads.replace(/,/g, '').trim();
+                appData.whatsNew = data.text();
+            });
+            page('.review-text').each(function(index, key) {
+                appData.reviews.push(page(this).text().trim());
             });
             debug(appData);
             res.send(appData);
@@ -105,4 +132,3 @@ app.get('/api', function(req, res) {
 
 var port = process.env.PORT || 3000;
 app.listen(port);
-
